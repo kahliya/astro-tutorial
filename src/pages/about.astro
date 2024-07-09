@@ -1,4 +1,10 @@
 ---
+import '../css/global.css';
+import '../css/about.css';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 const pageTitle = "About Me";
 
 const person = {
@@ -24,9 +30,7 @@ const goal = 3;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Header />
 
         <h1>{pageTitle}</h1>
         <h2>... and my shining new Astro site!</h2>
@@ -39,7 +43,7 @@ const goal = 3;
             <li>My name is {person.name}</li>
             <li>I live in {person.country} and I work as a {person.occupation}.</li>
             <li>My hobbies are:
-                <ul>{person.hobbies.map(hobby => <li>{hobby}</li>)}.</ul>
+                <ul>{person.hobbies.map(hobby => <li class="skill">{hobby}</li>)}.</ul>
             </li>
         </ul>
 
@@ -50,5 +54,7 @@ const goal = 3;
         {finished && <p>I finished this tutorial!</p>}
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
+        <Footer />
+        <script src="../scripts/hamburger" />
 	</body>
 </html>
