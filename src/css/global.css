@@ -84,3 +84,11 @@ footer {
     padding: 15px 20px;
     }
 }
+
+.fw-small {
+    font-size: 0.75rem;
+}
+
+.fw-italic {
+    font-style: italic;
+}

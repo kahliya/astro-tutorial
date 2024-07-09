@@ -1,9 +1,7 @@
 ---
-import '../css/global.css';
 import '../css/about.css';
 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About Me";
 
@@ -20,41 +18,26 @@ const happy = true;
 const finished = false;
 const goal = 3;
 ---
+<BaseLayout>
+    <h1>{pageTitle}</h1>
+    <h2>... and my shining new Astro site!</h2>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-        <Header />
+    <p>Me using Astro Tutorial</p>
+    <p>Moon soon :o</p>
 
-        <h1>{pageTitle}</h1>
-        <h2>... and my shining new Astro site!</h2>
+    <p>A few facts about me!</p>
+    <ul>
+        <li>My name is {person.name}</li>
+        <li>I live in {person.country} and I work as a {person.occupation}.</li>
+        <li>My hobbies are:
+            <ul>{person.hobbies.map(hobby => <li class="skill">{hobby}</li>)}.</ul>
+        </li>
+    </ul>
 
-        <p>Me using Astro Tutorial</p>
-        <p>Moon soon :o</p>
+    <p>My IT skills include:</p>
+    <ul>{skills.map((s => <li>{s}</li>))}</ul>
 
-        <p>A few facts about me!</p>
-        <ul>
-            <li>My name is {person.name}</li>
-            <li>I live in {person.country} and I work as a {person.occupation}.</li>
-            <li>My hobbies are:
-                <ul>{person.hobbies.map(hobby => <li class="skill">{hobby}</li>)}.</ul>
-            </li>
-        </ul>
-
-        <p>My IT skills include:</p>
-        <ul>{skills.map((s => <li>{s}</li>))}</ul>
-
-        {happy && <p>I am happy to be learning Astro!</p>}
-        {finished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-
-        <Footer />
-        <script src="../scripts/hamburger" />
-	</body>
-</html>
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+</BaseLayout>
