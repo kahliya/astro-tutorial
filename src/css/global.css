@@ -1,6 +1,11 @@
-.html {
+html {
     background-color: #f1f5f9;
     font-family: sans-serif;
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
 }
 
 body {
@@ -55,6 +60,10 @@ footer {
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
 
 .nav-links a:hover,
