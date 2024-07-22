@@ -3,8 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import BlogPostListItem from '../components/BlogPostListItem.astro';
 
-const pageTitle = "Astro Learning Blog";
-
 const allPosts = await Astro.glob('./posts/*.md');
 ---
 <BaseLayout>
